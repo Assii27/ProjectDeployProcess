@@ -1,0 +1,5 @@
+{
+  "name": "Spring Boot Deployment Guide",
+  "description": "An interactive, animated step-by-step guide for deploying Spring Boot applications to external Tomcat servers using WAR files.",
+  "requestFramePermissions": []
+}
