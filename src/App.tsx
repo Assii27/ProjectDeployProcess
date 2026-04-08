@@ -10,8 +10,7 @@ import {
   ExternalLink,
   Download,
   Globe,
-  Cpu,
-  FileJson
+  Cpu
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -70,7 +69,6 @@ export default function App() {
                   { id: "setup", label: "Tomcat Setup", icon: Server },
                   { id: "convert", label: "JAR to WAR", icon: Code2 },
                   { id: "build", label: "Build & Deploy", icon: Package },
-                  { id: "github-actions", label: "GitHub Actions", icon: Terminal },
                   { id: "access", label: "Access App", icon: ExternalLink },
                 ].map((item) => (
                   <a
@@ -364,59 +362,6 @@ public class Application extends SpringBootServletInitializer {
             </section>
 
             <Separator className="bg-slate-200" />
-
-            {/* Section 5: GitHub Actions */}
-            <section id="github-actions" className="scroll-mt-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-slate-900 rounded-lg">
-                  <Terminal className="w-6 h-6 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold">5. CI/CD with GitHub Actions</h2>
-              </div>
-
-              <Card className="border-slate-200 overflow-hidden">
-                <CardHeader className="bg-slate-50 border-b">
-                  <CardTitle className="flex items-center gap-2">
-                    <FileJson className="w-5 h-5 text-slate-500" />
-                    .github/workflows/deploy.yml
-                  </CardTitle>
-                  <CardDescription>Automate your WAR build on every push</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="bg-slate-900 p-6 font-mono text-xs text-slate-300 overflow-x-auto max-h-[400px]">
-                    <pre>{`name: Build and Package WAR
-
-on:
-  push:
-    branches: [ "main", "master" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-
-    - name: Build with Maven
-      run: mvn clean package -DskipTests
-
-    - name: Upload WAR Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: spring-boot-war
-        path: target/*.war`}</pre>
-                  </div>
-                </CardContent>
-              </Card>
-            </section>
 
             {/* Final Section: Access */}
             <section id="access" className="scroll-mt-8 bg-slate-900 rounded-3xl p-12 text-white relative overflow-hidden">
