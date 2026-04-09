@@ -40,6 +40,43 @@ export default function App() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'} font-sans selection:bg-blue-100 selection:text-blue-900`}>
+      {/* Motivational Section */}
+      <section className={`pt-32 pb-16 px-6 ${isDarkMode ? 'bg-slate-950' : 'bg-white'}`}>
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Colorful Animated Quote */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative"
+            >
+              <motion.h2 
+                animate={{ 
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{ 
+                  duration: 5, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+                className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-[length:200%_auto]"
+              >
+                “Every failure is just another iteration toward success.”
+              </motion.h2>
+              
+              {/* Subtle pulsing glow */}
+              <motion.div 
+                animate={{ opacity: [0.2, 0.4, 0.2], scale: [1, 1.05, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 -z-10"
+              />
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Top Bar */}
       <nav className={`fixed top-0 w-full z-50 border-b backdrop-blur-md ${isDarkMode ? 'bg-slate-950/80 border-slate-800' : 'bg-white/80 border-slate-200'}`}>
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
