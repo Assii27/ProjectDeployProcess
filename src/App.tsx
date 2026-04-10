@@ -84,7 +84,26 @@ export default function App() {
             <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl tracking-tight">Asif Maner</span>
+            <span className="font-bold text-xl tracking-tight">Technical Knowledge</span>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8">
+            <a 
+              href="https://assii27.github.io/Asif_Portfolio/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`text-sm font-semibold transition-all hover:scale-105 ${isDarkMode ? 'text-slate-300 hover:text-blue-400' : 'text-slate-600 hover:text-blue-600'}`}
+            >
+              Asif Maner
+            </a>
+            <a 
+              href="https://assii27.github.io/AWS_Deployment/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`text-sm font-semibold transition-all hover:scale-105 ${isDarkMode ? 'text-slate-300 hover:text-orange-400' : 'text-slate-600 hover:text-orange-600'}`}
+            >
+              AWS Deployment
+            </a>
           </div>
           
           <div className="flex items-center gap-4">
